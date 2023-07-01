@@ -5,9 +5,18 @@ pub fn decompress(mut compressed: BitReader) -> String {
     //Decode tree
     let mut cache_decode: Box<HashMap<Vec<bool>, char>> = Box::new(HashMap::new());
 
-    // tree_struct_decode(&mut compressed, &mut cache_decode);
-    hash_map_decode(&mut compressed, &mut cache_decode);
-    // branch_length_decode(&mut compressed, &mut cache_decode);
+    if true == true {
+        tree_struct_decode(&mut compressed, &mut cache_decode);
+
+    } else if true == false {
+        hash_map_decode(&mut compressed, &mut cache_decode);
+
+    } else if true == false {
+        branch_length_decode();//&mut compressed, &mut cache_decode);
+
+    }
+
+
 
     println!("cache_decode {:?}", cache_decode);
     println!("Reading encoded at bit pos {}", compressed.bit_position);
@@ -125,6 +134,6 @@ fn hash_map_decode(compressed: &mut BitReader, mut cache_decode: &mut Box<HashMa
     }
 }
 fn branch_length_decode() {
-
+    unimplemented!()
 }
 

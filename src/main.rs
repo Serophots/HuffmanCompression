@@ -14,7 +14,7 @@ fn main() {
     let mut compressed = Box::new(BitWriter::default());
     compress(input, &mut compressed);
 
-    let decompressed = decompress(compressed.to_reader());
+    let decompressed = decompress(compressed.to_reader()); //TODO: STack move - dont. See compress() takes &mut argument
 
     println!("Decompressed {}", decompressed);
 
